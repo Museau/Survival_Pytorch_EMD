@@ -1,0 +1,11 @@
+*.DS_Store
+
+slurm-*
+results/*
+old_results/*
+
+*.pyc
+*/__pycache__/*
+
+trainer/__pycache__/*
+visualization/__pycache__/*

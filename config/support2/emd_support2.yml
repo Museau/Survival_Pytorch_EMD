@@ -1,0 +1,28 @@
+CONFIG_NAME: 'emd_support2'
+GPU_ID: '0'
+CUDA: False
+VERBOSE: False
+
+# Dataset options
+DATA:
+  PATH: '~/Survival_Pytorch_EMD/datasets/'
+  SPLITS: '[0, 1, 2, 3, 4]'
+  DATASET: 'support2'
+
+# Training options
+TRAIN:
+  BATCH_SIZE: 512
+  MAX_EPOCH: 1000
+  PATIENCE: 20
+  LR: [1e-4, 1e-3, 1e-2, 1e-1]
+  L2_COEFF: [1e-6, 1e-5, 1e-4, 1e-3, 1e-2]
+  DROP_INPUT: 0.2
+  DROP_HIDDEN: '[0.5, 0.5, 0.5]'
+  LAYER_SIZES: '[100, 100, 100]'
+  BATCH_NORM: True
+  MODEL: "emd"
+  LOSS_TYPE: "emd_loss"
+  DIV_TIME: 2
+
+EMD:
+  PRIOR: [1.]

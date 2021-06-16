@@ -1,0 +1,25 @@
+CONFIG_NAME: 'sigm_colon_death'
+GPU_ID: '0'
+CUDA: False
+VERBOSE: False
+
+# Dataset options
+DATA:
+  PATH: '~/Survival_Pytorch_EMD/datasets/'
+  SPLITS: '[0, 1, 2, 3, 4]'
+  DATASET: 'colon_death'
+
+# Training options
+TRAIN:
+  BATCH_SIZE: 128
+  MAX_EPOCH: 1000
+  PATIENCE: 20
+  LR: [1e-4, 1e-3, 1e-2, 1e-1]
+  L2_COEFF: [1e-6, 1e-5, 1e-4, 1e-3, 1e-2]
+  DROP_INPUT: 0.2
+  DROP_HIDDEN: '[0.5, 0.5, 0.5]'
+  LAYER_SIZES: '[100, 100, 100]'
+  BATCH_NORM: True
+  MODEL: "likelihood"
+  LOSS_TYPE: 'rank_loss'
+  F_RANK: 'sigm'
